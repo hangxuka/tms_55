@@ -23,3 +23,7 @@ en:
       home: "Home"
       login: "Log in"
       framgia: "Framgia"
+      account: "Account"
+  sessions:
+    new:
+      title:  "Log in"
