@@ -20,10 +20,25 @@ en:
     application:
       title: "Wellcome to Framgia Training System"
     header:
-      home: "Home"
-      login: "Log in"
       framgia: "Framgia"
+      home: "Home"
+      help: "Help"
+      login: "Log in"
       account: "Account"
   sessions:
     new:
       title:  "Log in"
+  shared:
+    error_messages:
+      error_number: "error"
+  users:
+    edit:
+      title: "Edit Profile"
+      submit: "Save changes"
+      change: "Change"
+      confirmation: "Confirmation"
+  activerecord:
+    controller:
+      users:
+        update_success: "Profile updated"
+        danger: "Please Log in"
