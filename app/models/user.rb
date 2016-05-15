@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  enum role: [:trainee, :supervisor, :admin]
+
   has_many :activities, dependent: :destroy
   has_many :active_relationships, class_name: Relationship.name,
     foreign_key: :follower_id, dependent: :destroy

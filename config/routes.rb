@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   post "login" => "sessions#create"
   get "logout" => "sessions#destroy"
   resources :users, only: [:show, :edit, :update]
+  namespace :suppervisors do
+    resources :users, only: [:new, :create]
+  end
 end
