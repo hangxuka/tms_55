@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update_attributes user_params
-      flash[:update_success] = t "activerecord.controller.users.update_success"
+      flash[:update_success] = t "activerecord.controllers.users.update_success"
       redirect_to @user
     else
       render :edit
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   private
   def logged_in_user
     unless logged_in?
-      flash[:danger] = t "activerecord.controller.users.danger"
+      flash[:danger] = t "activerecord.controllers.users.danger"
       redirect_to login_url
     end
   end

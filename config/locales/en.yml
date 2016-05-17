@@ -25,6 +25,13 @@ en:
       help: "Help"
       login: "Log in"
       account: "Account"
+      user: "Users management"
+      alluser: "All users"
+  suppervisors:
+    users:
+      new:
+        newtrainee: "Create New Trainee"
+        confirmation: "Confirmation"
   sessions:
     new:
       title:  "Log in"
@@ -38,7 +45,12 @@ en:
       change: "Change"
       confirmation: "Confirmation"
   activerecord:
-    controller:
+    controllers:
       users:
         update_success: "Profile updated"
+        danger: "Please Log in"
+      suppervisors:
+        users:
+          success: "New Trainee created"
+      application:
         danger: "Please Log in"
