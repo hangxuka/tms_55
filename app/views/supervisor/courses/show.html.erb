@@ -1,0 +1,28 @@
+<p>
+  <strong><%= t "aplication.model.course.name" %></strong>
+  <%= @course.name %>
+</p>
+
+<p id="text_area">
+  <strong><%= t "aplication.model.course.description" %></strong>
+  <%= @course.description %>
+</p>
+
+<p>
+  <strong><%= t "aplication.model.course.start_date" %></strong>
+  <%= @course.start_date %>
+</p>
+
+<p>
+  <strong><%= t "aplication.model.course.end_date" %></strong>
+  <%= @course.end_date %>
+</p>
+
+<p>
+  <strong><%= t "aplication.model.course.status" %></strong>
+  <%= @course.status %>
+</p>
+
+<%= link_to t(". edit"), edit_supervisor_course_path(@course),
+  class: "btn btn-primary" %> |
+<%= link_to t(". back"), supervisor_courses_path, class: "btn btn-primary" %>

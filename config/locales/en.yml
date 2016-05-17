@@ -27,6 +27,7 @@ en:
       account: "Account"
       user: "Users management"
       alluser: "All users"
+      admin_course: "Course administration "
   sessions:
     new:
       title:  "Log in"
@@ -40,21 +41,103 @@ en:
       change: "Change"
       confirmation: "Confirmation"
   supervisor:
-        users:
-          index:
-            new: "Create new trainee"
-            name: "Name"
-            email: "Email"
-            progress: "progress"
-            edit: "Edit"
-            delete: "Delete"
-            confirm: "Are you sure?"
-          new:
-            newtrainee: "Create New Trainee"
-            confirmation: "Confirmation"
-          edit:
-            edittrainee: "Edit Trainee Profile"
-            savechange: "Save Change"
+    controllers:
+      courses:
+        create_course: "Create success!!!!"
+    users:
+      index:
+        new: "Create new trainee"
+        name: "Name"
+        email: "Email"
+        progress: "progress"
+        edit: "Edit"
+        delete: "Delete"
+        confirm: "Are you sure?"
+        method: "Method"
+        start: "Start"
+        finished: "Finish"
+        title: "Listing courses"        
+      new:
+        newtrainee: "Create New Trainee"
+        confirmation: "Confirmation"
+      edit:
+        edittrainee: "Edit Trainee Profile"
+        savechange: "Save Change"
+    courses:
+      new:
+        new_course: "New Course"
+        edit_course: "Edit course"
+      index:
+        title: "Listing courses"
+        method: "Method"
+        start: "Start"
+        finished: "Finish"
+        show: "Show"
+        edit: "Edit"
+        destroy: "Destroy"
+        new_course: "New course"
+        its_subject: "Show its subjects"
+      notice: 
+        destroy: "Course was successfully destroyed."
+      show:
+        create_by: "Create by"
+        trainee: "Trainee"
+        supervisor: "Supervisor"
+        name: "UserName"
+        email: "Email"
+        status: "Status"
+        active: "active"
+        all_trainee: "All Trainee"
+        title: "All Courses"
+        new_course: "New Course"
+        edit_course: "Edit course"
+        show: "Show"
+        edit: "Edit"
+        back: "Back"
+      edit:
+        show: "Show"
+        back: "Back"
+        edit: "Exit"
+      new:
+        show: "Show"
+        back: "Back"
+    controllers:
+      application:
+        danger: "you dont login"
+  aplication:
+    general:
+      start_date: "Start date:"
+      end_date: "End date:"
+      date_format: "YYYY/MM/DD"
+      confirm: "Are you sure ?"
+    flash:
+      only_supervisor: "You are not supervisor"
+      create_course: "Create Course success"
+    errors:
+      title_form: "The form contains"
+      course:
+        start_end: "Start date can not greater than end_date"
+        blank: "Date can not blank"
+    model:
+      course:
+        name: "Name"
+        description: "Description"
+        status: "Status"
+        start_date: "Start date"
+        end_date: "End date"
+        rule: "Rule"
+        action: "Actions"
+    button:
+      create_course: "Create"
+      edit: "Edit"
+      delete: "Delete"
+      show_trainee: "View Trainee"
+      update: "Update"
+      up_subject: "Subject"
+      submit: "Submit"
+      no_task: "No task"
+      show: "Show"
+      hide: "Hide"
   activerecord:
     controllers:
       users:

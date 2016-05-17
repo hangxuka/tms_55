@@ -34,7 +34,7 @@ class Supervisor::UsersController < ApplicationController
 
   def destroy
     @user.destroy
-    flash[:delete_success] = t "activerecord.controllers.users.update_success"
+    flash[:delete_success] = t "activerecord.controllers.users.delete_success"
     redirect_to supervisor_users_url
   end
   
