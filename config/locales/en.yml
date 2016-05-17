@@ -27,11 +27,6 @@ en:
       account: "Account"
       user: "Users management"
       alluser: "All users"
-  suppervisors:
-    users:
-      new:
-        newtrainee: "Create New Trainee"
-        confirmation: "Confirmation"
   sessions:
     new:
       title:  "Log in"
@@ -44,12 +39,24 @@ en:
       submit: "Save changes"
       change: "Change"
       confirmation: "Confirmation"
+  supervisor:
+        users:
+          index:
+            new: "Create new trainee"
+            name: "Name"
+            email: "Email"
+            progress: "progress"
+            edit: "Edit"
+            delete: "Delete"
+          new:
+            newtrainee: "Create New Trainee"
+            confirmation: "Confirmation"
   activerecord:
     controllers:
       users:
         update_success: "Profile updated"
         danger: "Please Log in"
-      suppervisors:
+      supervisor:
         users:
           success: "New Trainee created"
       application:
