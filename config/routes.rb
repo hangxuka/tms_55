@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root "static_pages#home"
   get "about" => "static_pages#about"
   get "contact" => "static_pages#contact"
@@ -6,7 +7,8 @@ Rails.application.routes.draw do
   post "login" => "sessions#create"
   get "logout" => "sessions#destroy"
   resources :users, only: [:show, :edit, :update]
-  namespace :suppervisors do
-    resources :users, only: [:new, :create]
+  namespace :supervisor do
+    root "users#index"
+    resources :users, only: [:new, :index, :create]
   end
 end

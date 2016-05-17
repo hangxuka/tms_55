@@ -7,8 +7,8 @@
         <li><%= link_to t(".help"), "#" %></li>
         <% if logged_in? %>
           <% if current_user.supervisor? %>
-            <li><%= link_to t(".user"), new_suppervisors_user_path %></li>
-            <li><%= link_to t(".alluser"), "#" %></li>
+            <li><%= link_to t(".user"), new_supervisor_user_path %></li>
+            <li><%= link_to t(".alluser"), supervisor_users_path %></li>
           <% else %>
             <li><%= link_to t(".alluser"), "#" %></li>
           <% end %>
