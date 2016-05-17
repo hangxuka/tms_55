@@ -11,5 +11,6 @@ Rails.application.routes.draw do
     root "users#index"
     resources :users
     resources :courses, except: [:show, :edit, :destroy]
+    resources :subjects, only: [:index]
   end
 end

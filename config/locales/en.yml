@@ -27,6 +27,7 @@ en:
       account: "Account"
       user: "Users management"
       alluser: "All users"
+      allsubject: "All subjects"
       admin_course: "Course administration "
   sessions:
     new:
