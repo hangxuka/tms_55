@@ -1,0 +1,43 @@
+<div class="col-md-6 col-md-offset-3">
+<%= form_for [:supervisor, @course] do |f| %>
+  <%= render "shared/error_messages", object: @course %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description, class: "form-control", rows: 10 %>
+  </div>
+  <div class="form-group">
+    <%= f.label :start_date, t("application.model.start_date") %>
+    <div class="input-group date datetimepicker">
+      <%= f.text_field :start_date, class: "form-control",
+        data: {date_format: I18n.t("application.general.date_format")} %>
+      <span class="input-group-addon">
+        <span class="glyphicon glyphicon-calendar"></span>
+      </span>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :end_date, t("application.model.end_date") %>
+    <div class="input-group date datetimepicker" >
+      <%= f.text_field :end_date, class: "form-control",
+        data: {date_format: I18n.t("application.general.date_format")} %>
+      <span class="input-group-addon">
+        <span class="glyphicon glyphicon-calendar"></span>
+      </span>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.text_field :status, class: "form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit nil, class: "btn btn-primary" %>
+  </div>
+<% end %>
+<div>
