@@ -26,8 +26,12 @@ class User < ActiveRecord::Base
 
   has_secure_password
   
+  def correct_user? user
+    self == user
+  end
+
   private
   def email_downcase
     self.email = email.downcase
-  end
+  end 
 end
