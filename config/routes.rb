@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update]
   namespace :supervisor do
     root "users#index"
-    resources :users, only: [:new, :index, :create]
+    resources :users
   end
 end

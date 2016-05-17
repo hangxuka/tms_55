@@ -26,10 +26,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def load_user
-    @user = User.find params[:id]
-  end
-
   def correct_user
     redirect_to root_url unless @user.correct_user? current_user
   end
