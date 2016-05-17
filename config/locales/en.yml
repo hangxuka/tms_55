@@ -48,13 +48,18 @@ en:
             progress: "progress"
             edit: "Edit"
             delete: "Delete"
+            confirm: "Are you sure?"
           new:
             newtrainee: "Create New Trainee"
             confirmation: "Confirmation"
+          edit:
+            edittrainee: "Edit Trainee Profile"
+            savechange: "Save Change"
   activerecord:
     controllers:
       users:
         update_success: "Profile updated"
+        delete_success: "User Deleted"
         danger: "Please Log in"
       supervisor:
         users:

@@ -1,5 +1,6 @@
 class Supervisor::UsersController < ApplicationController
   before_action :logged_in_user, :verify_supervisor, only: [:new, :create, :index]
+  before_action :load_user, only: [:edit, :update, :destroy]
 
   def new
     @user = User.new
@@ -17,6 +18,24 @@ class Supervisor::UsersController < ApplicationController
 
   def index
     @users = User.trainee.paginate page: params[:page]
+  end
+
+  def edit
+  end
+
+  def update
+    if @user.update_attributes user_params
+      flash[:update_success] = t "activerecord.controllers.users.update_success"
+      redirect_to @user
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @user.destroy
+    flash[:delete_success] = t "activerecord.controllers.users.update_success"
+    redirect_to supervisor_users_url
   end
   
   private
