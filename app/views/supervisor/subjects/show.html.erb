@@ -1,0 +1,18 @@
+<p>
+  <strong><%= t "aplication.model.subject.name" %></strong>
+  <%= @subject.name %>
+</p>
+
+<p>
+  <strong><%= t "aplication.model.subject.start_date" %></strong>
+  <%= @subject.start_date %>
+</p>
+
+<p>
+  <strong><%= t "aplication.model.subject.end_date" %></strong>
+  <%= @subject.end_date %>
+</p>
+
+<%= link_to t(". edit"), "#", class: "btn btn-primary" %> 
+<%= link_to t(". back"), supervisor_subjects_path, class: "btn btn-primary" %>
+

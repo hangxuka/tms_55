@@ -100,6 +100,12 @@ en:
       new:
         show: "Show"
         back: "Back"
+    subjects:
+      index:
+        show: "Detail"
+        name: "Subject"
+        start_date: "Start date"
+        end_date: "End date"
   aplication:
     general:
       start_date: "Start date:"
@@ -126,6 +132,10 @@ en:
         end_date: "End date"
         rule: "Rule"
         action: "Actions"
+      subject:
+        name: "Name"
+        start_date: "Start date"
+        end_date: "End date"
     button:
       create_course: "Create"
       edit: "Edit"
