@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   namespace :supervisor do
     root "users#index"
     resources :users
-    resources :courses, except: [:show, :edit, :destroy]
     resources :subjects, only: [:index]
+    resources :courses, except: [:destroy]
   end
 end

@@ -42,9 +42,6 @@ en:
       change: "Change"
       confirmation: "Confirmation"
   supervisor:
-    controllers:
-      courses:
-        create_course: "Create success!!!!"
     users:
       index:
         new: "Create new trainee"
@@ -78,6 +75,7 @@ en:
         destroy: "Destroy"
         new_course: "New course"
         its_subject: "Show its subjects"
+        title_edit: Editing Course
       notice: 
         destroy: "Course was successfully destroyed."
       show:
@@ -102,18 +100,18 @@ en:
       new:
         show: "Show"
         back: "Back"
-    controllers:
-      application:
-        danger: "you dont login"
   aplication:
     general:
       start_date: "Start date:"
       end_date: "End date:"
       date_format: "YYYY/MM/DD"
-      confirm: "Are you sure ?"
+      confirm: "Are you sure?"
     flash:
       only_supervisor: "You are not supervisor"
       create_course: "Create Course success"
+      course_update_success: "Course update success"
+      subject_update_failed: "Subject update failed"
+      course_update_failed: "Course update failed"
     errors:
       title_form: "The form contains"
       course:
@@ -148,5 +146,9 @@ en:
       supervisor:
         users:
           success: "New Trainee created"
+        courses:
+          create_course: "Create success!!!!"
+          course_update_success: "Course update success"
+          course_update_failed: "Course update failed"
       application:
         danger: "Please Log in"

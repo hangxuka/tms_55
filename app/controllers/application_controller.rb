@@ -22,6 +22,6 @@ class ApplicationController < ActionController::Base
   end
 
   def verify_supervisor
-    redirect_to root_url unless current_user.supervisor?
+    redirect_to root_url unless current_user.supervisor? || current_user.admin?
   end
 end
