@@ -150,5 +150,6 @@ en:
           create_course: "Create success!!!!"
           course_update_success: "Course update success"
           course_update_failed: "Course update failed"
+          delete_success: "Course deleted"
       application:
         danger: "Please Log in"

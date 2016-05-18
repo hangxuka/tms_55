@@ -1,7 +1,7 @@
 class Supervisor::CoursesController < ApplicationController
   before_action :logged_in_user
   before_action :find_course, except: [:index, :new, :create]
-  before_action :verify_supervisor, only: [:edit, :update]
+  before_action :verify_supervisor, only: [:edit, :update, :destroy]
 
   def index
     @courses = Course.paginate page: params[:page]
@@ -39,6 +39,9 @@ class Supervisor::CoursesController < ApplicationController
   end
 
   def destroy
+    @course.destroy
+    flash[:delete_success] = t "activerecord.controllers.users.delete_success"
+    redirect_to supervisor_courses_url
   end
 
   private
