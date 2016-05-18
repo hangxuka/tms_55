@@ -1,15 +1,16 @@
 <% provide :title, t(".all_subject") %>
 <div class = "page-header">
   <h2><%= t ".all_subject" %></h2>
-  <p><%= link_to t(".new"), new_supervisor_user_path %></p>
+  <p><%= link_to t(".new"), "#" %></p>
 </div>
 <hr>
 <table class = "table table-striped">
   <thead>
     <tr>
-      <th><%= t "name" %></th>
-      <th><%= t "start_date" %></th>
-      <th><%= t "end_date"%></th>
+      <th><%= t ".name" %></th>
+      <th><%= t ".start_date" %></th>
+      <th><%= t ".end_date"%></th>
+      <th><%= t ".show" %></th>
       <th><%= t "edit" %></th>
       <th><%= t "delete" %></th>
     </tr>
@@ -20,6 +21,7 @@
         <td><%= subject.name %></td>
         <td><%= subject.start_date %></td>
         <td><%= subject.start_date %></td>
+        <td><%= link_to t(".show"), supervisor_subject_path(subject) %></td>
         <td><%= link_to t("edit"), "#" %></td>
         <td><%= link_to t("delete"), "#" %></td>
       </tr>
