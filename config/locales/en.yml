@@ -107,6 +107,12 @@ en:
         name: "Subject"
         start_date: "Start date"
         end_date: "End date"
+    assign_trainees:
+      edit:
+        add_trainee_to_course: "Select Trainee"
+    controllers:
+      application:
+        danger: "you dont login"
   aplication:
     general:
       start_date: "Start date:"
@@ -162,5 +168,7 @@ en:
           course_update_success: "Course update success"
           course_update_failed: "Course update failed"
           delete_success: "Course deleted"
+        assign_trainee:
+          success: "Users selected"  
       application:
         danger: "Please Log in"
