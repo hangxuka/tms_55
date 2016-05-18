@@ -68,7 +68,8 @@
       <td>
         <%= link_to t("aplication.button.edit"), edit_supervisor_course_path(course) %>
       </td>
-      <td><%= link_to t(". destroy"), "#" %></td>
+      <td><%= link_to t(". destroy"), supervisor_course_path(course), method: :delete,
+        data: {confirm: t("aplication.general.confirm")} %></td>
     </tr>
   <% end %>
 </table>
