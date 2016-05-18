@@ -14,6 +14,8 @@ class Course < ActiveRecord::Base
 
   private
   def end_date_greate_or_equal_than_start_date
-    errors.add :start_date, I18n.t("errors.course.start_end") if start_date > end_date
+    if start_date > end_date
+      errors.add :start_date, I18n.t("aplication.errors.course.start_end")
+    end
   end
 end

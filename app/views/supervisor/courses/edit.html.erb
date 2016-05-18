@@ -1,0 +1,7 @@
+<h1><%= t "supervisor.courses.index.title_edit" %></h1>
+
+<%= render "form" %>
+
+<%= link_to t(". exit"), edit_supervisor_course_path(@course),
+  class: "btn btn-primary" %> |
+<%= link_to t(". back"), supervisor_courses_path, class: "btn btn-primary" %>
