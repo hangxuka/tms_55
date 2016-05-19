@@ -9,6 +9,7 @@
           <% if current_user.trainee? %>
              <li><%= link_to t(".alltrainee"), users_path %></li>
              <li><%= link_to t(".mysubject"), user_subject_path(current_user) %></li>
+             <li><%= link_to t(".mycourse"), user_course_path(current_user) %></li>
           <% elsif current_user.supervisor? %>
             <li><%= link_to t(".user"), new_supervisor_user_path %></li>
             <li><%= link_to t(".alluser"), supervisor_users_path %></li>
