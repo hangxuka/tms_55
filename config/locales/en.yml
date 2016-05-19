@@ -6,7 +6,7 @@ en:
       content_about: "About systems training system framgia"
     contact:
       name: "Contact"
-      content_contact: "Contact us via telephone: 0987234234"     
+      content_contact: "Contact us via telephone: 0987234234"
     home:
       title: "Wellcome to Framgia Training System"
       signin: "Sign in now!"
@@ -29,6 +29,7 @@ en:
       alluser: "All users"
       alltrainee: "All trainees"
       allsubject: "All subjects"
+      mysubject: "My subjects"
       admin_course: "Course administration "
   sessions:
     new:
@@ -36,6 +37,10 @@ en:
   shared:
     error_messages:
       error_number: "error"
+  user_subjects:
+    show:
+      my_subject: "My subjects"
+      datetime: "%d-%m-%Y"
   users:
     edit:
       title: "Edit Profile"
@@ -55,7 +60,7 @@ en:
         method: "Method"
         start: "Start"
         finished: "Finish"
-        title: "Listing courses"        
+        title: "Listing courses"
       new:
         newtrainee: "Create New Trainee"
         confirmation: "Confirmation"
@@ -77,7 +82,7 @@ en:
         new_course: "New course"
         its_subject: "Show its subjects"
         title_edit: Editing Course
-      notice: 
+      notice:
         destroy: "Course was successfully destroyed."
       show:
         create_by: "Create by"
@@ -169,6 +174,6 @@ en:
           course_update_failed: "Course update failed"
           delete_success: "Course deleted"
         assign_trainee:
-          success: "Users selected"  
+          success: "Users selected"
       application:
         danger: "Please Log in"
