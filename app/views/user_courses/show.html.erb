@@ -1,0 +1,44 @@
+<h1><%= t ".title" %></h1>
+
+<table id = "tbl_lsusercourse">
+  <thead>
+    <tr>
+      <th><%= t ".index" %></th>
+      <th><%= t ".course.name" %></th>
+      <th><%= t ".course.start_date"%></th>
+      <th><%= t ".course.end_date"%></th>
+      <th><%= t ".course.status"%></th>
+      <th><%= t ".course.action"%></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @courses.each_with_index do |course, index|%>
+      <tr>
+        <td class="col-md-1"><%= index + 1 %></td>
+        <td><%= course.name %></td>
+        <td><%= course.start_date.strftime t ".datetime" %></td>
+        <td><%= course.end_date.strftime t ".datetime" %></td>
+        <td class="col-md-1">
+        <% if course.pending? %>
+          <label class="btn btn-danger"><%= t "pending" %></label>
+        <% elsif course.starting? %>
+          <label class="btn btn-success"><%= t "starting" %></label>
+        <% elsif course.finished? %>
+          <label class="btn btn-danger"><%= t "finished" %></label>
+        <% end %>
+        </td>
+        <td class="col-md-1">
+          <%= link_to t(".member"), "#"  %>
+        </td>
+        <td class="col-md-1">
+          <%= link_to t(".subject_course"), "#" %>
+        </td>
+                <td class="col-md-1">
+          <%= link_to t(".supervisor_course"), "#" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -30,6 +30,7 @@ en:
       alltrainee: "All trainees"
       allsubject: "All subjects"
       mysubject: "My subjects"
+      mycourse: "My courses"
       admin_course: "Course administration "
   sessions:
     new:
@@ -47,6 +48,15 @@ en:
       submit: "Save changes"
       change: "Change"
       confirmation: "Confirmation"
+  user_courses:
+    show:
+      title: "Your courses"
+      starting: "Starting"
+      finished: "Finished"
+      member: "Member"
+      subject_course: "Subject of course"
+      supervisor_course: "Supervisor of course"
+      datetime: "%d-%m-%Y"
   supervisor:
     users:
       index:
@@ -144,6 +154,7 @@ en:
         end_date: "End date"
         rule: "Rule"
         action: "Actions"
+        index: "Index"
       subject:
         name: "Name"
         start_date: "Start date"
