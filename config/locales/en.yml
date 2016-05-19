@@ -115,6 +115,9 @@ en:
     assign_trainees:
       edit:
         add_trainee_to_course: "Select Trainee"
+    assign_trainers:
+      edit:
+        add_trainer_to_course: "Select Trainer"
     controllers:
       application:
         danger: "you dont login"
@@ -175,5 +178,7 @@ en:
           delete_success: "Course deleted"
         assign_trainee:
           success: "Users selected"
+        assign_trainer:
+          success: "Trainers selected"
       application:
         danger: "Please Log in"

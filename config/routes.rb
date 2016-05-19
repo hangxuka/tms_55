@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :subjects, only: [:show, :index]
     resources :courses do
       resource :assign_trainees, only: [:edit, :update]
+      resource :assign_trainers, only: [:edit, :update]
     end
   end
 end

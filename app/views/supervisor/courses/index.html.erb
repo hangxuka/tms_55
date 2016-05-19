@@ -20,7 +20,7 @@
   <% @courses.each do |course| %>
     <tr>
       <td><%= course.name %></td>
-    
+
       <td><%= course.start_date %></td>
       <td><%= course.end_date %></td>
 
@@ -42,7 +42,7 @@
           </span>
         <% end %>
       </td>
- 
+
 <!-- ket thuc status -->
 
       <td>
@@ -55,21 +55,27 @@
                 supervisor_course_path(course) %>
             </li>
             <li>
-              <%= link_to t("supervisor.user_courses.add_trainee"), edit_supervisor_course_assign_trainees_path(course) %>
+              <%= link_to t("supervisor.user_courses.add_trainee"),
+                edit_supervisor_course_assign_trainees_path(course) %>
             </li>
             <li><%= link_to t("aplication.button.show_trainee"), "#" %></li>
-            <li><%= link_to t("supervisor.user_courses.add_supervisor"), "#" %></li>
+            <li>
+              <%= link_to t("supervisor.user_courses.add_supervisor"),
+                edit_supervisor_course_assign_trainers_path(course) %>
+            </li>
           </ul>
         </div>
       </td>
       <td>
-        <%= link_to t("aplication.button.show"), supervisor_course_path(course) %>
+        <%= link_to t("aplication.button.show"),
+          supervisor_course_path(course) %>
       </td>
       <td>
-        <%= link_to t("aplication.button.edit"), edit_supervisor_course_path(course) %>
+        <%= link_to t("aplication.button.edit"),
+          edit_supervisor_course_path(course) %>
       </td>
-      <td><%= link_to t(". destroy"), supervisor_course_path(course), method: :delete,
-        data: {confirm: t("aplication.general.confirm")} %></td>
+      <td><%= link_to t(". destroy"), supervisor_course_path(course),
+        method: :delete, data: {confirm: t("aplication.general.confirm")} %></td>
     </tr>
   <% end %>
 </table>
