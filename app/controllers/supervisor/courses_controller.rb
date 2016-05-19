@@ -25,7 +25,7 @@ class Supervisor::CoursesController < ApplicationController
           .courses.course_update_failed"
         render :edit
       end
-    end    
+    end
   end
 
   def create
