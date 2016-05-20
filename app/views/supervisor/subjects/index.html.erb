@@ -14,6 +14,7 @@
       <th><%= t ".show" %></th>
       <th><%= t "edit" %></th>
       <th><%= t "delete" %></th>
+      <th><%= t "viewTasks" %></th>
     </tr>
   </thead>
   <tbody>
@@ -25,6 +26,7 @@
         <td><%= link_to t(".show"), supervisor_subject_path(subject) %></td>
         <td><%= link_to t("edit"), "#" %></td>
         <td><%= link_to t("delete"), "#" %></td>
+        <td><%= link_to t("viewTasks"), supervisor_tasks_path(subject) %></td>
       </tr>
     <% end %>
     <%= will_paginate %>

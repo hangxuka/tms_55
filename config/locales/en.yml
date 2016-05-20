@@ -127,6 +127,12 @@ en:
         name: "Subject"
         start_date: "Start date"
         end_date: "End date"
+        viewTasks: "View tasks"
+    tasks:
+      show:
+        all_task: "All tasks of subject"
+        content: "Contents"
+        status: "Status"
     assign_trainees:
       edit:
         add_trainee_to_course: "Select Trainee"

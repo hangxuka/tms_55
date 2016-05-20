@@ -1,14 +1,16 @@
 class Supervisor::SubjectsController < ApplicationController
-  before_action :find_subject, only: [:show]
+  before_action :find_subject, only: [:show, :view_task]
 
   def index
     @subjects = Subject.paginate page: params[:page]
   end
 
   def show
+    @tasks = Task.where(subject_id: params[:id])
   end
 
   def new
+    @task = Task.new
     @subject=Subject.new
   end
 
