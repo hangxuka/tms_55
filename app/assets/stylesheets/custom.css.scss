@@ -172,9 +172,16 @@ input {
   color: rgba(0,0,0,.5)
 }
 
-.tt-subject h3
+.tt-subject
 {
-  margin-left: 30px;
-  font-size: 25px;
-  color: rgba(0,0,0,.5)
+  h3 {
+    margin-left: 30px;
+    font-size: 25px;
+    color: rgba(0,0,0,.5)
+  }
+  .inform
+  {
+    margin-left: 30px;
+    color: red;
+  }
 }

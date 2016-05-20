@@ -19,17 +19,36 @@
                       edit_supervisor_course_assign_trainees_path(@course) %></p>
                   <% end %>
                   <p><%= link_to t(".view_progress"), "#" %></p>
+                  <div class="btn-group pull-right">
+                    <% if @course.pending? %>
+                      <%= form_for [:supervisor, @course] do |f| %>
+                        <%= f.hidden_field :status, value: :starting %>
+                        <%= f.submit t(".start_course") %>
+                      <% end %>
+                    <% elsif @course.starting? %>
+                      <%= form_for [:supervisor, @course] do |f| %>
+                        <%= f.hidden_field :status, value: :finished %>
+                        <%= f.submit t(".finish_course") %>
+                      <% end %>
+                    <% end %>
+                  </div>
                 </div>
               </div>
               <div class="tt-subject">
                 <h3><%= t ".list_subject_in_course" %></h3>
-                <% @course_subjects.each do |course_subject| %>
-                  <div class="media">
-                    <div class="media-body">
-                      <p class="media-middle"><%= link_to course_subject.subject.name,
-                        supervisor_subject_path(course_subject.subject) %></p>
-                    </div>
+                <% if @course_subjects.count == 0 %>
+                  <div class="inform">
+                    <p><%= t ".inform" %></p>
                   </div>
+                <% else %>
+                  <% @course_subjects.each do |course_subject| %>
+                    <div class="media">
+                      <div class="media-body">
+                        <p class="media-middle"><%= link_to course_subject.subject.name,
+                          supervisor_subject_path(course_subject.subject) %></p>
+                      </div>
+                    </div>
+                  <% end %>
                 <% end %>
               </div>
             </div>
