@@ -113,6 +113,7 @@ en:
         finish_course: "Finish Course"
         start_date: "Start Date: "
         end_date: "End Date: "
+        inform: "Not have anysubject in this course"
       edit:
         show: "Show"
         back: "Back"
