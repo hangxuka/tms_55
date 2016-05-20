@@ -1,7 +1,7 @@
 class Supervisor::CoursesController < ApplicationController
   before_action :logged_in_user
   before_action :find_course, except: [:index, :new, :create]
-  before_action :verify_supervisor, only: [:edit, :update, :destroy]
+  before_action :verify_supervisor
 
   def index
     @courses = Course.paginate page: params[:page]
@@ -9,6 +9,10 @@ class Supervisor::CoursesController < ApplicationController
 
   def new
     @course = Course.new
+  end
+
+  def show
+    @course_subjects = @course.course_subjects
   end
 
   def edit
