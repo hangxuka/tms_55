@@ -14,7 +14,6 @@ Rails.application.routes.draw do
     root "users#index"
     resources :users
     resources :subjects
-    resources :tasks
     resources :courses do
       resource :assign_trainees, only: [:edit, :update]
       resource :assign_trainers, only: [:edit, :update]

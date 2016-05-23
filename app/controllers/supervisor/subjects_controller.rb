@@ -1,17 +1,17 @@
 class Supervisor::SubjectsController < ApplicationController
-  before_action :find_subject, only: [:show, :view_task]
+  before_action :find_subject, only: [:show]
 
   def index
     @subjects = Subject.paginate page: params[:page]
   end
 
   def show
-    @tasks = Task.where(subject_id: params[:id])
+    @tasks = @subject.tasks
   end
 
   def new
-    @task = Task.new
     @subject=Subject.new
+    @subject.tasks.build
   end
 
   def create
@@ -24,12 +24,22 @@ class Supervisor::SubjectsController < ApplicationController
     end
   end
 
+  def destroy
+    if @subject.destroy
+      flash[:success] = t "flash.delete_subject"
+      redirect_to supervisor_subjects_path
+    else
+      flash[:error] = t "flash.cannot_delete_subject"
+    end
+  end
+
   private
   def find_subject
     @subject = Subject.find params[:id]
   end
 
   def subject_params
-    params.require(:subject).permit :name, :start_date, :end_date
+    params.require(:subject).permit :name, :start_date, :end_date,
+      tasks_attributes: [:id, :name, :content, :_destroy]
   end
 end

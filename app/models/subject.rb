@@ -8,6 +8,7 @@ class Subject < ActiveRecord::Base
   validates :start_date, presence: true
   validates :end_date, presence: true
   validate  :end_date_greate_or_equal_than_start_date
+  accepts_nested_attributes_for :tasks, reject_if: :all_blank
 
   private
   def end_date_greate_or_equal_than_start_date

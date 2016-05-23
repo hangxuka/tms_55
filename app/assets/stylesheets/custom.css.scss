@@ -185,3 +185,25 @@ input {
     color: red;
   }
 }
+#new_subject {
+  .form-group {
+    margin-left:10%;
+    width: 70%;
+    #success {
+      width: 100px;
+    }
+  }
+}
+
+#subject_tasks_name {
+  width: 70%;
+}
+
+.fields {
+  margin-left:10%;
+  width: 70%;
+}
+
+.task_update {
+  margin-left:10%;
+}
