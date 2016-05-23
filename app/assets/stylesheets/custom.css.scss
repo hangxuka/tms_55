@@ -546,3 +546,29 @@ input {
     margin-left: 10px;
   }
 }
+
+/* Task_info */
+
+.task_info {
+  margin-top: 30px;
+  .color-name
+  {
+    background: #ddd;
+  }
+  .color-name p
+  {
+    color: red;
+  }
+  table, td, th {
+    border: 1px solid #ddd;
+    text-align: left;
+    font-weight: solid;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  th, td {
+    padding: 15px;
+  }
+}

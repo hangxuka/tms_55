@@ -48,6 +48,13 @@ en:
       submit: "Save changes"
       change: "Change"
       confirmation: "Confirmation"
+    show:
+      coursename: "Course Name: "
+      taskname: "Task Name: "
+      subjectname: "Subject Name: "
+      startdate: "Start Date: "
+      status: "Status: "
+      /: " / "
   user_courses:
     show:
       title: "Your courses"
