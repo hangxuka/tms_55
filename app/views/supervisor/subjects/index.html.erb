@@ -1,7 +1,8 @@
 <% provide :title, t(".all_subject") %>
 <div class = "page-header">
   <h2><%= t ".all_subject" %></h2>
-  <p><%= link_to t(".new"), "#" %></p>
+  <p><%= link_to t(".new"), new_supervisor_subject_path,
+    class: "btn btn-primary" %></p>
 </div>
 <hr>
 <table class = "table table-striped">

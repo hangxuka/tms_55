@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   namespace :supervisor do
     root "users#index"
     resources :users
-    resources :subjects, only: [:show, :index]
+    resources :subjects
     resources :courses do
       resource :assign_trainees, only: [:edit, :update]
       resource :assign_trainers, only: [:edit, :update]

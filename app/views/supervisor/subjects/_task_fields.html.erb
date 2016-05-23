@@ -1,0 +1,13 @@
+<div class="fields">
+  <%= link_to_remove_fields t(".remove_task"), f %><br />
+    <div class="row">
+      <div class="col-lg-8">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+      <div class="col-lg-8">
+        <%= f.label :content %>
+        <%= f.text_area :content, class: "form-control" %>
+      </div>
+    </div>
+</div>

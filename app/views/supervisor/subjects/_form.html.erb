@@ -1,0 +1,39 @@
+<%= form_for [:supervisor, @subject] do |f| %>
+  <%= render "shared/error_messages", object: @subject %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :start_date, t("application.model.start_date") %>
+    <div class="input-group">
+      <%= f.date_field :start_date, class: "form-control",
+        value: Time.now.strftime("%d-%m-%Y") %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :end_date, t("application.model.end_date") %>
+    <div class="input-group">
+      <%= f.date_field :end_date, class: "form-control",
+        value: Time.now.strftime("%d-%m-%Y") %>
+    </div>
+  </div>
+
+  <%= f.fields_for :tasks do |builder| %>
+    <%= render "task_fields", f: builder %>
+  <% end %>
+
+  <div class="task_update"
+    <p><%= link_to_add_fields t("new_task"), f, :tasks %></p>
+    <ul class="list-inline">
+      <li>
+        <%= button_tag t("application.buttons.submit"), type: :submit,
+          class: "btn btn-success" %>
+      </li>
+      <li>
+        <%= button_tag t("application.buttons.reset"), type: :reset,
+          class: "btn btn-default" %>
+      </li>
+    </ul>
+  </div>
+<% end %>
