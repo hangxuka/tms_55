@@ -119,7 +119,8 @@ en:
         destroy: "Destroy"
         new_course: "New course"
         its_subject: "Show its subjects"
-        title_edit: Editing Course
+        title_edit: "Editing Course"
+        add_subject: "Add subjects"
       notice:
         destroy: "Course was successfully destroyed."
       show:
@@ -149,6 +150,8 @@ en:
       new:
         show: "Show"
         back: "Back"
+      form:
+        select_subject: "Select subjects of course"
     subjects:
       index:
         show: "Detail"
@@ -191,7 +194,7 @@ en:
       title_form: "The form contains"
       course:
         start_end: "Start date can not greater than end_date"
-        blank: "Date can not blank"
+        blank: "can not blank"
       subject:
         start_end: "Start date can not greater than end_date"
         nil_date: "Error blank"
