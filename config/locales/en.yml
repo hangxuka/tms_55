@@ -19,6 +19,10 @@ en:
       copyright: "Copyright by team DHL"
     application:
       title: "Wellcome to Framgia Training System"
+      errors: "Error date !"
+      button:
+        submit: "Submit"
+        reset: "Reset"
     header:
       framgia: "Framgia"
       home: "Home"
@@ -146,6 +150,7 @@ en:
         name: "Subject"
         start_date: "Start date"
         end_date: "End date"
+        viewTasks: "View tasks"
     assign_trainees:
       edit:
         add_trainee_to_course: "Select Trainee"
@@ -172,6 +177,9 @@ en:
       course:
         start_end: "Start date can not greater than end_date"
         blank: "Date can not blank"
+      subject:
+        start_end: "Start date can not greater than end_date"
+        nil_date: "Error blank"
     model:
       course:
         name: "Name"
@@ -215,5 +223,7 @@ en:
           success: "Users selected"
         assign_trainer:
           success: "Trainers selected"
+        subjects:
+          create_subject: "Create success!"
       application:
         danger: "Please Log in"

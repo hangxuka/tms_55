@@ -88,6 +88,7 @@ ActiveRecord::Schema.define(version: 20160512032642) do
     t.integer  "user_id"
     t.integer  "subject_id"
     t.integer  "course_subject_id"
+    t.integer  "status"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
   end
