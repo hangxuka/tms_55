@@ -53,6 +53,36 @@
               </div>
             </div>
           </div>
+          <div class="col-xs-12 col-sm-4">
+            <div class="tt-trainee">
+              <h3><%= t ".trainee_in_course" %></h3>
+              <div class="tt-trainee-list">
+                <% @course.users.trainee.each do |trainee| %>
+                  <div class="media">
+                    <div class="media-body">
+                      <h6 class="media-heading">
+                        <%= link_to trainee.name,
+                          supervisor_user_path(trainee) %></h6>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+            <div class="tt-trainer">
+              <h4><%= t ".trainer_in_course" %></h4>
+              <div class="tt-trainer-list">
+                <% @course.users.supervisor.each do |supervisor| %>
+                  <div class="media">
+                    <div class="media-body">
+                      <h6 class="media-heading">
+                        <%= link_to supervisor.name,
+                          supervisor_user_path(supervisor) %></h6>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
