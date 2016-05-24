@@ -8,9 +8,8 @@
       <th><%= t ".course.start_date"%></th>
       <th><%= t ".course.end_date"%></th>
       <th><%= t ".course.status"%></th>
+      <th><%= t ".course.subject_number"%></th>
       <th><%= t ".course.action"%></th>
-      <th></th>
-      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -30,13 +29,10 @@
         <% end %>
         </td>
         <td class="col-md-1">
-          <%= link_to t(".member"), "#"  %>
+          <%= course.subjects.count %>
         </td>
         <td class="col-md-1">
-          <%= link_to t(".subject_course"), "#" %>
-        </td>
-                <td class="col-md-1">
-          <%= link_to t(".supervisor_course"), "#" %>
+          <%= link_to t(".details"), course_path(course) %>
         </td>
       </tr>
     <% end %>

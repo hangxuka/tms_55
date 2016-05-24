@@ -123,7 +123,7 @@ input {
 }
 
 table {
-  width:100%;
+  width: 100%;
 }
 
 table, th, td {
@@ -141,10 +141,23 @@ table#tbl_lscourse tr:nth-child(even) {
 }
 
 table#tbl_lscourse tr:nth-child(odd) {
-  background-color:#fff;
+  background-color: #fff;
 }
 
 table#tbl_lscourse th  {
+  background-color: black;
+  color: white;
+}
+
+table#tbl_lsusercourse tr:nth-child(even) {
+  background-color: #eee;
+}
+
+table#tbl_lsusercourse tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+table#tbl_lsusercourse th  {
   background-color: black;
   color: white;
 }

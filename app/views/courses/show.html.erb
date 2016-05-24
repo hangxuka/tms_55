@@ -1,0 +1,37 @@
+<div id="content">
+  <table id = "tbl_lsmycourse">
+    <thead>
+      <tr>
+        <th><%= t "aplication.model.course.name" %></th>
+        <th><%= t "aplication.model.course.start_date" %></th>
+        <th><%= t "aplication.model.course.end_date" %></th>
+        <th><%= t "aplication.model.course.status" %></th>
+      </tr>
+    </thead>
+      <tr>
+        <td><%= @course.name %></td>
+        <td><%= @course.start_date %></td>
+        <td><%= @course.end_date %></td>
+        <td><%= @course.status %></td>
+      </tr>
+  </table>
+  <br>
+  <p id="text_area">
+    <strong><%= t "aplication.model.course.description" %></strong>
+    <%= @course.description %>
+  </p>
+  <br>
+  <div class="nav-content">
+    <ul class="nav nav-tabs">
+      <li class="active"><a data-toggle="tab" href="#action"><%= t "action" %></a></li>
+      <li><a data-toggle="tab" href="#trainees"><%= t "trainees" %></a>
+      </li>
+      <li><a data-toggle="tab" href="#subjects"><%= t "subjects" %></a></li>
+    </ul>
+    <br>
+    <div class="tab-content" >
+      <%= render "trainees_of_course" %>
+    </div>
+    <br>
+  </div>
+</div>

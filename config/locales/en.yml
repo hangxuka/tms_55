@@ -53,10 +53,22 @@ en:
       title: "Your courses"
       starting: "Starting"
       finished: "Finished"
-      member: "Member"
+      details: "Details"
       subject_course: "Subject of course"
       supervisor_course: "Supervisor of course"
+      subject_number: "Subjects number"
       datetime: "%d-%m-%Y"
+  courses:
+    show:
+      member: "All members"
+      action: "Action"
+      trainees: Trainees
+      supervisors: "Supervisors"
+      subjects: "Subjects"
+    trainees:
+      index: "Index"
+      name: "Name"
+      email: "Email"
   supervisor:
     users:
       index:
@@ -189,8 +201,8 @@ en:
           success: "New Trainee created"
         courses:
           create_course: "Create success!!!!"
-          course_update_success: "Course update success"
-          course_update_failed: "Course update failed"
+          success: "Course update success"
+          failed: "Course update failed"
           delete_success: "Course deleted"
         assign_trainee:
           success: "Users selected"

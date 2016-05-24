@@ -21,12 +21,10 @@ class Supervisor::CoursesController < ApplicationController
   def update
     begin
       if @course.update_attributes course_params
-        flash[:success] = t "activerecord.controllers.supervisor
-          .courses.course_update_success"
+        flash[:success] = t "activerecord.controllers.supervisor.courses.success"
         redirect_to supervisor_course_path @course
       else
-        flash[:danger] = t "activerecord.controllers.supervisor
-          .courses.course_update_failed"
+        flash[:danger] = t "activerecord.controllers.supervisor.courses.failed"
         render :edit
       end
     end
