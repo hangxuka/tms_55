@@ -19,13 +19,13 @@
           </tr>
           <tr>
             <table class="table table-hover">
-              <% course.subjects.each do |user_subject| %>
+              <% @user.user_subjects.each do |user_subject| %>
                 <tr>
                   <td class="color-name"><%= t ".subjectname" %><p>
-                    <%= user_subject.name %></p></td>
+                    <%= user_subject.subject.name %></p></td>
                   <td class="color-name"><%= t ".startdate" %><p>
-                    <%= user_subject.start_date %><%= t "./"%>
-                      <%= user_subject.end_date %>
+                    <%= user_subject.subject.start_date %><%= t "./"%>
+                      <%= user_subject.subject.end_date %>
                     </p>
                   </td>
                 </tr>

@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20160512032642) do
   create_table "course_subjects", force: :cascade do |t|
     t.integer  "subject_id"
     t.integer  "course_id"
+    t.integer  "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
