@@ -159,6 +159,11 @@ en:
     assign_trainers:
       edit:
         add_trainer_to_course: "Select Trainer"
+    course_progresses:
+      show:
+        trainning: "Trainning"
+        start: "Start"
+        finished: "Finished"
     controllers:
       application:
         danger: "you dont login"

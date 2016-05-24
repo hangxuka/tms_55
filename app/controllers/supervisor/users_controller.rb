@@ -13,7 +13,7 @@ class Supervisor::UsersController < ApplicationController
       redirect_to new_supervisor_user_url
     else
       render :new
-    end	
+    end
   end
 
   def index
@@ -37,10 +37,10 @@ class Supervisor::UsersController < ApplicationController
     flash[:delete_success] = t "activerecord.controllers.users.delete_success"
     redirect_to supervisor_users_url
   end
-  
+
   private
   def user_params
-    params.require(:user).permit :name, :email, :password, :password_confirmation	
+    params.require(:user).permit :name, :email, :password, :password_confirmation
   end
 
   def verify_supervisor

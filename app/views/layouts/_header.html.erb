@@ -11,7 +11,6 @@
              <li><%= link_to t(".mysubject"), user_subject_path(current_user) %></li>
              <li><%= link_to t(".mycourse"), user_course_path(current_user) %></li>
           <% elsif current_user.supervisor? %>
-            <li><%= link_to t(".user"), new_supervisor_user_path %></li>
             <li><%= link_to t(".alluser"), supervisor_users_path %></li>
             <li><%= link_to t(".allsubject"), supervisor_subjects_path %></li>
             <li><%= link_to t(".admin_course"), supervisor_courses_path %></li>

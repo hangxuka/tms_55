@@ -18,7 +18,6 @@
                     <p><%= link_to t(".add_trainee_to_course"),
                       edit_supervisor_course_assign_trainees_path(@course) %></p>
                   <% end %>
-                  <p><%= link_to t(".view_progress"), "#" %></p>
                   <div class="btn-group pull-right">
                     <% if @course.pending? %>
                       <%= form_for [:supervisor, @course] do |f| %>
@@ -34,21 +33,27 @@
                   </div>
                 </div>
               </div>
-              <div class="tt-subject">
+              <div class="tt-subject task_info">
                 <h3><%= t ".list_subject_in_course" %></h3>
                 <% if @course_subjects.count == 0 %>
                   <div class="inform">
                     <p><%= t ".inform" %></p>
                   </div>
                 <% else %>
-                  <% @course_subjects.each do |course_subject| %>
-                    <div class="media">
-                      <div class="media-body">
-                        <p class="media-middle"><%= link_to course_subject.subject.name,
-                          supervisor_subject_path(course_subject.subject) %></p>
-                      </div>
-                    </div>
-                  <% end %>
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <td class="style"><%= t".name" %></td>
+                        <td class="style"><%= t".status" %></td>
+                      </tr>
+                    </thead>
+                    <% @course_subjects.each do |course_subject| %>
+                      <tr>
+                        <td><%= course_subject.subject.name %></td>
+                        <td><%= course_subject.status %></td>
+                      </tr>
+                    <% end %>
+                  </table>
                 <% end %>
               </div>
             </div>
@@ -62,7 +67,7 @@
                     <div class="media-body">
                       <h6 class="media-heading">
                         <%= link_to trainee.name,
-                          supervisor_user_path(trainee) %></h6>
+                          user_path(trainee) %></h6>
                     </div>
                   </div>
                 <% end %>
@@ -76,7 +81,7 @@
                     <div class="media-body">
                       <h6 class="media-heading">
                         <%= link_to supervisor.name,
-                          supervisor_user_path(supervisor) %></h6>
+                          user_path(supervisor) %></h6>
                     </div>
                   </div>
                 <% end %>
