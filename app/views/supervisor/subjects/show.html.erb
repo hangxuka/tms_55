@@ -13,7 +13,8 @@
   <%= @subject.end_date %>
 </p>
 
-<%= link_to t(". edit"), "#", class: "btn btn-primary" %>
+<%= link_to t(". edit"), edit_supervisor_subject_path(@subject),
+  class: "btn btn-primary" %>
 <%= link_to t(". back"), supervisor_subjects_path, class: "btn btn-primary" %>
 
 <h2><%= t ".all_task" %></h2>

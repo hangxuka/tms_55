@@ -1,5 +1,5 @@
 class Supervisor::SubjectsController < ApplicationController
-  before_action :find_subject, only: [:show]
+  before_action :find_subject, except: [:index, :new, :create]
 
   def index
     @subjects = Subject.paginate page: params[:page]
@@ -7,6 +7,18 @@ class Supervisor::SubjectsController < ApplicationController
 
   def show
     @tasks = @subject.tasks
+  end
+
+  def edit
+  end
+
+  def update
+    if @subject.update_attributes subject_params
+      flash[:success] = t "aplication.flash.update_subject"
+      redirect_to [:supervisor, @subject]
+    else
+      render :edit
+    end
   end
 
   def new
@@ -21,6 +33,15 @@ class Supervisor::SubjectsController < ApplicationController
       redirect_to supervisor_subject_path @subject
     else
       render :new
+    end
+  end
+
+  def destroy
+    if @subject.destroy
+      flash[:success] = t "flash.delete_subject"
+      redirect_to supervisor_subjects_path
+    else
+      flash[:error] = t "flash.cannot_delete_subject"
     end
   end
 
