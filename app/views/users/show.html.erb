@@ -7,4 +7,55 @@
       </h1>
     </section>
   </aside>
+  <div class="col-md-8">
+    <div class="task_info">
+      <table class="table table-hover">
+        <% @user.courses.each do |course| %>
+          <tr>
+            <td class="color-name"><%= t ".coursename" %><p><%= course.name %></p></td>
+            <td class="color-name"><%= t ".startdate" %><p>
+            <%= course.start_date %><%= t "./"%><%= course.end_date%></p></td>
+            <td class="color-name"><%= t ".status" %><p><%= course.status %></p></td>
+          </tr>
+          <tr>
+            <table class="table table-hover">
+              <% course.subjects.each do |user_subject| %>
+                <tr>
+                  <td class="color-name"><%= t ".subjectname" %><p>
+                    <%= user_subject.name %></p></td>
+                  <td class="color-name"><%= t ".startdate" %><p>
+                    <%= user_subject.start_date %><%= t "./"%>
+                      <%= user_subject.end_date %>
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <td><%= t ".taskname" %></td>
+                          <td><%= t ".status" %></td>
+                        </tr>
+                      </thead>
+                      <% user_subject.tasks.each do |task| %>
+                        <tr>
+                          <td><%= task.name %></td>
+                          <td>
+                            <% task.user_tasks.each do |user_task| %>
+                              <%= user_task.status %>
+                            <% end %>
+                          </td>
+                        </tr>
+                      <% end %>
+                    </table>
+                  </td>
+                </tr>
+              <% end %>
+            </table>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
 </div>
