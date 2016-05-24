@@ -23,8 +23,9 @@
         <td><%= subject.start_date %></td>
         <td><%= subject.start_date %></td>
         <td><%= link_to t(".show"), supervisor_subject_path(subject) %></td>
-        <td><%= link_to t("edit"), "#" %></td>
-        <td><%= link_to t("delete"), "#" %></td>
+        <td><%= link_to t("edit"), edit_supervisor_subject_path(subject) %></td>
+        <td><%= link_to t("delete"), supervisor_subject_path(subject),
+          method: :delete, data: {confirm: t("aplication.general.confirm")} %></td>
       </tr>
     <% end %>
     <%= will_paginate %>

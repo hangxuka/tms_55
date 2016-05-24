@@ -151,6 +151,8 @@ en:
         start_date: "Start date"
         end_date: "End date"
         viewTasks: "View tasks"
+      edit:
+        editSubject: "Edit subject and tasks"
     assign_trainees:
       edit:
         add_trainee_to_course: "Select Trainee"
@@ -172,6 +174,9 @@ en:
       course_update_success: "Course update success"
       subject_update_failed: "Subject update failed"
       course_update_failed: "Course update failed"
+      update_subject: "Update success"
+      delete_subject: "Delete success"
+      cannot_delete_subject: "Cannot delete subject"
     errors:
       title_form: "The form contains"
       course:
