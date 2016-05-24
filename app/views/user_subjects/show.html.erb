@@ -9,14 +9,26 @@
       <th><%= t ".name" %></th>
       <th><%= t ".start_date" %></th>
       <th><%= t ".end_date"%></th>
+      <th><%= t ".status"%></th>
     </tr>
   </thead>
   <tbody>
-    <% @subjects.each do |subject|%>
+    <% @user_subjects.each do |user_subject| %>
       <tr>
-        <td><%= subject.name %></td>
-        <td><%= subject.start_date.strftime t ".datetime" %></td>
-        <td><%= subject.end_date.strftime t ".datetime" %></td>
+        <td><%= user_subject.subject_name %></td>
+        <td><%= user_subject.subject_start_date.strftime t ".datetime" %></td>
+        <td><%= user_subject.subject_end_date.strftime t ".datetime" %></td>
+        <td>
+          <% if user_subject.inprogress? %>
+            <%= form_for user_subject do |f| %>
+              <%= f.hidden_field :status, value: :finished %>
+              <%= f.submit t(".finished"),
+                class: "btn btn-danger col-md-8" %>
+            <% end %>
+          <% else %>
+            <span class="label label-default"><%= t ".finished" %></span>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
