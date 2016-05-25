@@ -42,6 +42,8 @@ en:
   shared:
     error_messages:
       error_number: "error"
+    user_info:
+      view_my_profile: "View my Profile"
   user_subjects:
     success: "Success"
     errors: "Error"
@@ -67,6 +69,9 @@ en:
       startdate: "Start Date: "
       status: "Status: "
       /: " / "
+    follow_form:
+      unfollow: "Unfollow"
+      follow: "Follow"
   user_courses:
     show:
       title: "Your courses"
