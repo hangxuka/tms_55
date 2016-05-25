@@ -43,9 +43,14 @@ en:
     error_messages:
       error_number: "error"
   user_subjects:
+    success: "Finish success"
+    errors: "Finish error"
     show:
       my_subject: "My subjects"
       datetime: "%d-%m-%Y"
+      status: "Status"
+      start: "Start"
+      finished: "Finish"
   users:
     edit:
       title: "Edit Profile"
