@@ -36,6 +36,20 @@
     <%= f.label :status %><br>
     <%= f.text_field :status, class: "form-control" %>
   </div>
+  <h3><%= t".select_subject" %> </h3>
+  <%= f.collection_check_boxes :subject_ids, @subjects, :id, :name do |item_subject| %>
+    <span>
+      <table>
+        <%= item_subject.label do %>
+          <tr>
+            <td class = "col-md-4"><%= item_subject.check_box %></td>
+            <td><%= item_subject.text %></td>
+          </tr>
+        <% end %>
+      </table>
+    </span>
+  <% end %>
+  <br>
   <div class="actions">
     <%= f.submit nil, class: "btn btn-primary" %>
   </div>

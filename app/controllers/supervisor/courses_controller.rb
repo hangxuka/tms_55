@@ -1,7 +1,8 @@
 class Supervisor::CoursesController < ApplicationController
   before_action :logged_in_user
-  before_action :find_course, except: [:index, :new, :create]
   before_action :verify_supervisor
+  before_action :find_course, except: [:index, :create]
+  before_action :load_subject, only: [:new, :edit]
 
   def index
     @courses = Course.paginate page: params[:page]
@@ -36,13 +37,14 @@ class Supervisor::CoursesController < ApplicationController
       flash[:success] = t "activerecord.controllers.supervisor.courses.create_course"
       redirect_to supervisor_course_path @course
     else
+      load_subject
       render :new
     end
   end
 
   def destroy
     @course.destroy
-    flash[:delete_success] = t "activerecord.controllers.users.delete_success"
+    flash[:delete_success] = t "activerecord.controllers.courses.delete_success"
     redirect_to supervisor_courses_url
   end
 
@@ -52,6 +54,11 @@ class Supervisor::CoursesController < ApplicationController
   end
 
   def course_params
-    params.require(:course).permit :name, :description, :start_date, :end_date, :status
+    params.require(:course).permit :name, :description, :start_date, :end_date, :status,
+      subject_ids:[]
+  end
+
+  def load_subject
+    @subjects = Subject.all
   end
 end
