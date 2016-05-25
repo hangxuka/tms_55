@@ -1,9 +1,13 @@
 class Supervisor::UsersController < ApplicationController
   before_action :logged_in_user, :verify_supervisor, only: [:new, :create, :index]
-  before_action :load_user, only: [:edit, :update, :destroy]
+  before_action :find_user, except: [:index, :new, :create]
 
   def new
     @user = User.new
+  end
+
+  def show
+    @user_subjects = @user.user_subjects
   end
 
   def create
@@ -39,6 +43,10 @@ class Supervisor::UsersController < ApplicationController
   end
 
   private
+  def find_user
+    @user = User.find params[:id]
+  end
+
   def user_params
     params.require(:user).permit :name, :email, :password, :password_confirmation
   end
