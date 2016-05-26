@@ -4,6 +4,8 @@ class CoursesController < ApplicationController
 
   def show
     @users = @course.users
+    @activities = Activity.activities_of_course(@course)
+      .paginate page: params[:page], per_page: 10
   end
 
   private

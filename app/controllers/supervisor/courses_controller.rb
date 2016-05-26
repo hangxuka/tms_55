@@ -1,7 +1,7 @@
 class Supervisor::CoursesController < ApplicationController
   before_action :logged_in_user
   before_action :verify_supervisor
-  before_action :find_course, except: [:index, :create]
+  before_action :find_course, except: [:index, :new, :create]
   before_action :load_subject, only: [:new, :edit]
 
   def index

@@ -3,7 +3,7 @@ class CreateActivities < ActiveRecord::Migration
     create_table :activities do |t|
       t.references :user, index: true, foreign_key: true
       t.integer :target_id
-      t.text :actiontype
+      t.integer :actiontype
 
       t.timestamps null: false
     end

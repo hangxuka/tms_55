@@ -5,6 +5,7 @@ class Course < ActiveRecord::Base
   has_many :users, through: :user_courses
   has_many :course_subjects, dependent: :destroy
   has_many :subjects, through: :course_subjects
+  has_many :activities, dependent: :nullify
 
   validates :name, presence: true, length: {maximum: 50}
   validates :description, presence: true
