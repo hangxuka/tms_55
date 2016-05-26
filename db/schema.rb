@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20160512032642) do
   create_table "activities", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "target_id"
-    t.integer "actiontype"
+    t.integer  "actiontype"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 20160512032642) do
   create_table "user_courses", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "course_id"
+    t.integer  "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
