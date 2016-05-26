@@ -27,13 +27,25 @@ class User < ActiveRecord::Base
   before_save :email_downcase
 
   has_secure_password
-  
+
   def correct_user? user
     self == user
+  end
+
+  def follow other_user
+    active_relationships.create following_id: other_user.id
+  end
+
+  def unfollow other_user
+    active_relationships.find_by(following_id: other_user.id).destroy
+  end
+
+  def following_other_user? other_user
+    following.include? other_user
   end
 
   private
   def email_downcase
     self.email = email.downcase
-  end 
+  end
 end
