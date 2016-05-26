@@ -1,0 +1,18 @@
+<div id="action" class="tab-pane fade in active">
+  <table class="table">
+    <thead>
+    </thead>
+    <tbody>
+      <% @activities.each_with_index do |activity, index| %>
+        <tr>
+          <td>
+            <%= link_to activity.user.name, supervisor_user_path(activity.user) %>
+              &nbsp;<%= t(activity.actiontype) %>
+              &nbsp; at &nbsp; <%= activity.created_at %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="center"><%= will_paginate @activities %></div>
+</div>
