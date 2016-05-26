@@ -86,13 +86,19 @@ en:
     show:
       member: "All members"
       action: "Action"
-      trainees: Trainees
+      trainees: "Trainees"
       supervisors: "Supervisors"
       subjects: "Subjects"
-    trainees:
+    trainees_of_course:
       index: "Index"
       name: "Name"
       email: "Email"
+    subjects_of_course:
+      start_date: "Start date"
+      end_date: "End date"
+      task: "List task of subject"
+      create_at: "Create at"
+      content: "Content"
   supervisor:
     users:
       index:
