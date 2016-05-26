@@ -19,7 +19,27 @@
             <td class="color-name"><%= t ".coursename" %><p><%= course.name %></p></td>
             <td class="color-name"><%= t ".startdate" %><p>
             <%= course.start_date %><%= t "./"%><%= course.end_date%></p></td>
-            <td class="color-name"><%= t ".status" %><p><%= course.status %></p></td>
+            <td class="color-name"><%= t ".status" %>
+              <p>
+                <% if course.pending? %>
+                  <%= form_for [:supervisor, course] do |f| %>
+                    <%= f.hidden_field :status, value: :starting %>
+                    <%= f.submit t("supervisor.courses.index.start"),
+                      class: "btn btn-success col-md-8" %>
+                  <% end %>
+                <% elsif course.starting? %>
+                  <%= form_for [:supervisor, course] do |f| %>
+                    <%= f.hidden_field :status, value: :finished %>
+                    <%= f.submit t("supervisor.courses.index.finished"),
+                      class: "btn btn-danger col-md-8" %>
+                  <% end %>
+                <% else %>
+                  <span class="label label-default">
+                    <%= t "supervisor.courses.index.finished" %>
+                  </span>
+                <% end %>
+              </p>
+            </td>
           </tr>
           <tr>
             <table class="table table-hover">
@@ -31,6 +51,19 @@
                     <%= user_subject.subject.start_date %><%= t "./"%>
                       <%= user_subject.subject.end_date %>
                     </p>
+                  </td>
+                  <td>
+                    <% if user_subject.inprogress? %>
+                      <%= form_for user_subject do |f| %>
+                        <%= f.hidden_field :status, value: :finished %>
+                        <%= f.submit t(".finished"),
+                          class: "btn btn-danger col-md-8" %>
+                      <% end %>
+                    <% else %>
+                      <span class="label label-default">
+                        <%= t "supervisor.courses.index.finished" %>
+                      </span>
+                    <% end %>
                   </td>
                 </tr>
                 <tr>
@@ -47,7 +80,26 @@
                           <td><%= task.name %></td>
                           <td>
                             <% task.user_tasks.each do |user_task| %>
-                              <%= user_task.status %>
+
+                              <p>
+                                <% if user_task.start? %>
+                                  <%= form_for user_subject do |f| %>
+                                      <%= f.hidden_field :status, value: :inprogress %>
+                                      <%= f.submit t("users.show.inprogress"),
+                                        class: "btn btn-success col-md-8" %>
+                                  <% end %>
+                                <% elsif user_task.inprogress? %>
+                                  <%= form_for user_subject do |f| %>
+                                      <%= f.hidden_field :status, value: :finished %>
+                                      <%= f.submit t("users.show.finished"),
+                                        class: "btn btn-danger col-md-8" %>
+                                  <% end %>
+                                <% else %>
+                                  <span class="label label-default">
+                                    <%= t "supervisor.courses.index.finished" %>
+                                  </span>
+                                <% end %>
+                              </p>
                             <% end %>
                           </td>
                         </tr>

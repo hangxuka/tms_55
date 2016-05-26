@@ -56,6 +56,9 @@ en:
     edit:
       savechange: "Submit"
       update: "Update status of user_subject"
+  user_tasks:
+    success: "Success"
+    error: "Error"
   users:
     edit:
       title: "Edit Profile"
@@ -68,6 +71,9 @@ en:
       subjectname: "Subject Name: "
       startdate: "Start Date: "
       status: "Status: "
+      finished: "Finish"
+      inprogress: "Inprogress"
+      show_progress: "Your current progress"
       /: " / "
     follow_form:
       unfollow: "Unfollow"
@@ -108,6 +114,7 @@ en:
         start: "Start"
         finished: "Finish"
         title: "Listing courses"
+        tasks: "Tasks"
       new:
         newtrainee: "Create New Trainee"
         confirmation: "Confirmation"
