@@ -9,7 +9,8 @@
     <tr>
       <th><%= t "name" %></th>
       <th><%= t "email" %></th>
-      <th><%= t "progress"%></th>
+      <th><%= t "progress" %></th>
+      <th><%= t "subjects" %></th>
       <th><%= t "edit" %></th>
       <th><%= t "delete" %></th>
     </tr>
@@ -20,6 +21,7 @@
         <td><%= user.name %></td>
         <td><%= user.email %></td>
         <td><%= link_to t("progress"), "#" %></td>
+        <td><%= link_to t("subjects"), supervisor_user_path(user) %></td>
         <td><%= link_to t("edit"), edit_supervisor_user_path(user) %></td>
         <td><%= link_to t("delete"), supervisor_user_path(user),
           method: :delete, data: {confirm: t(".confirm")} %></td>

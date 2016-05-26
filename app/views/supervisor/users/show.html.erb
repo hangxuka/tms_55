@@ -1,0 +1,64 @@
+<div id="courses">
+  <div class="tt-main">
+    <div class="tt-content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-12 col-sm-8">
+            <div class="tt-course">
+              <div class="tt-course-summary">
+                <h3><%= @user.name %></h3>
+                <p> <%= t ".email" %> <%= @user.email %></p>
+              </div>
+              <div class="tt-subject task_info">
+                <h3><%= t ".list_subject_of_trainee" %></h3>
+                <% if @user_subjects.size == 0 %>
+                  <div class="inform">
+                    <p><%= t ".inform" %></p>
+                  </div>
+                <% else %>
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <td class="style"><%= t".name" %></td>
+                        <td class="style"><%= t".status" %></td>
+                        <td></td>
+                        <td class="style"><%= t".edit" %></td>
+                      </tr>
+                    </thead>
+                    <% @user_subjects.each do |user_subject| %>
+                      <tr>
+                        <td><%= user_subject.subject.name %></td>
+                        <td><%= user_subject.status %></td>
+                        <td>
+                          <% if user_subject.start? %>
+                            <%= form_for user_subject do |f| %>
+                              <%= f.hidden_field :status, value: :inprogress %>
+                              <%= f.submit t(".start"),
+                                class: "btn btn-success col-md-8" %>
+                            <% end %>
+                          <% elsif user_subject.inprogress? %>
+                            <%= form_for user_subject do |f| %>
+                            <%= f.hidden_field :status, value: :finished %>
+                            <%= f.submit t(".finished"),
+                              class: "btn btn-danger col-md-8" %>
+                            <% end %>
+                          <% else %>
+                            <span class="label label-default">
+                              <%= t "supervisor.courses.index.finished" %></span>
+                          <% end %>
+                        </td>
+                        <td>
+                          <%= link_to t("edit"), edit_user_subject_path(user_subject) %>
+                        </td>
+                      </tr>
+                    <% end %>
+                  </table>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
