@@ -12,6 +12,9 @@ class UserSubject < ActiveRecord::Base
 
   after_update :finish_activity
 
+  accepts_nested_attributes_for :user_tasks,
+   reject_if: :all_blank
+
   delegate :name, :start_date, :end_date, to: :subject, prefix: true
 
   private

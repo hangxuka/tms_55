@@ -3,7 +3,12 @@ class UserSubjectsController < ApplicationController
   before_action :load_user_subject, only: [:show, :update, :edit]
 
   def show
-    @user_subjects = current_user.user_subjects
+    @tasks = @subject.tasks
+    @user_id = @user_subject.user_id
+    @tasks.each do |task|
+      @user_subject.user_tasks.find_or_initialize_by task_id: task.id,
+        user_id: @user_id
+    end
   end
 
   def edit
@@ -19,14 +24,13 @@ class UserSubjectsController < ApplicationController
   end
 
   private
-
   def load_user_subject
     @user_subject = UserSubject.find params[:id]
     @subject = @user_subject.subject
   end
 
   def user_subject_params
-    params.require(:user_subject).permit :subject_id, :user_id,
-      :course_subject_id, :status
+    params.require(:user_subject).permit :user_id, :subject_id, :course_subject_id, :status,
+      user_tasks_attributes: [:id, :user_id, :status, :task_id]
   end
 end

@@ -54,6 +54,11 @@ en:
       status: "Status"
       start: "Start"
       finished: "Finish"
+      tasks: "Tasks"
+      edit: "Edit"
+      update: "Update"
+      finish: "Finish"
+      confirm: "confirm"
     edit:
       savechange: "Submit"
       update: "Update status of user_subject"

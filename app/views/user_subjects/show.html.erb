@@ -1,35 +1,39 @@
-<% provide :title, t(".my_subject") %>
-<div class = "page-header">
-  <h2><%= t ".my_subject" %></h2>
-</div>
-<hr>
-<table class = "table table-striped">
-  <thead>
-    <tr>
-      <th><%= t ".name" %></th>
-      <th><%= t ".start_date" %></th>
-      <th><%= t ".end_date"%></th>
-      <th><%= t ".status"%></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @user_subjects.each do |user_subject| %>
-      <tr>
-        <td><%= user_subject.subject_name %></td>
-        <td><%= user_subject.subject_start_date.strftime t ".datetime" %></td>
-        <td><%= user_subject.subject_end_date.strftime t ".datetime" %></td>
-        <td>
-          <% if user_subject.inprogress? %>
-            <%= form_for user_subject do |f| %>
-              <%= f.hidden_field :status, value: :finished %>
-              <%= f.submit t(".finished"),
-                class: "btn btn-danger col-md-8" %>
+<div class="center"><h1><%= @subject.name %></h1></div>
+<div>
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-8 colum-right">
+        <div class="row">
+          <% if @subject.tasks.count > 0 %>
+            <%= form_for @user_subject, url: user_subject_path(@user_subject) do |f| %>
+              <%= f.hidden_field :subject_id, value: @subject.id %>
+                <%= f.fields_for :user_tasks do |builder| %>
+                  <div class="col-lg-2">
+                    <div class="row">
+                      <div class="thumbnail text-center task">
+                        <h4><%= builder.object.task.name %></h4>
+                        <p><%= builder.check_box :status,
+                          {checked: builder.object.finished?}, :finished,
+                            builder.object.status %>
+                        </p>
+                        <%= builder.hidden_field :user_id, value: @user_id %>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="text-center col-md-2">
+                      <div class="row">
+                        <%= f.submit t(".update"), class: "btn btn-primary" %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
             <% end %>
-          <% else %>
-            <span class="label label-default"><%= t ".finished" %></span>
           <% end %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
