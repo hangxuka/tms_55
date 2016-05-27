@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  include ActivityActionable
+
   enum role: [:trainee, :supervisor, :admin]
 
   has_many :activities, dependent: :destroy
@@ -26,6 +28,8 @@ class User < ActiveRecord::Base
 
   before_save :email_downcase
 
+  after_update :update_activity
+
   has_secure_password
 
   def correct_user? user
@@ -34,10 +38,12 @@ class User < ActiveRecord::Base
 
   def follow other_user
     active_relationships.create following_id: other_user.id
+    create_activity self.id, other_user.id, Activity.actiontypes[:follow]
   end
 
   def unfollow other_user
     active_relationships.find_by(following_id: other_user.id).destroy
+    create_activity id, other_user.id, Activity.actiontypes[:unfollow]
   end
 
   def following_other_user? other_user
@@ -47,5 +53,9 @@ class User < ActiveRecord::Base
   private
   def email_downcase
     self.email = email.downcase
+  end
+
+  def update_activity
+    create_activity id, id, Activity.actiontypes[:update_profile]
   end
 end

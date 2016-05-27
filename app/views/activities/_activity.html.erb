@@ -1,0 +1,24 @@
+<li id="<%= activity.id %>">
+  <%= link_to gravatar_for(activity.user), activity.user %>
+  <span class="user"><%= link_to activity.user.name, activity.user %></span>
+  <% attribute = activity.target_id %>
+  <% actiontype = activity.actiontype %>
+  <span class="content"><%= activity.actiontype %>
+    <% case actiontype %>
+    <% when "update_profile" %>
+    <% when "follow" %>
+      <%= load_activity User, attribute %>
+    <% when "unfollow" %>
+      <%= load_activity User, attribute %>
+    <% when "finish_task" %>
+      <%= load_activity Task, attribute %>
+    <% when "finish_subject" %>
+      <%= load_activity Subject, attribute %>
+    <% when "finish_course" %>
+      <%= load_activity Course, attribute %>
+    <% end %>
+  </span>
+  <span class="timestamp">
+    <%= time_ago_in_words(activity.created_at) %> <%= t ".ago" %>
+  </span>
+</li>

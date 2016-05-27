@@ -15,4 +15,8 @@ module SessionsHelper
   def logged_in?
     current_user.present?
   end
+
+  def load_activity target, attribute
+    target.find(attribute).name
+  end
 end

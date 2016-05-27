@@ -12,6 +12,7 @@ en:
       signin: "Sign in now!"
       introduce: "This is the home page for the training of human resources of the company"
       linkto_framgia: "Framgia Vietnam"
+      activitiesfeed: "Activities feed"
   layouts:
     footer:
       about: "About"
@@ -99,6 +100,9 @@ en:
       task: "List task of subject"
       create_at: "Create at"
       content: "Content"
+  activities:
+    activity:
+      ago: "ago."
   supervisor:
     users:
       index:
