@@ -1,0 +1,41 @@
+<div id="subjects" class="tab-pane fade">
+  <table class="table">
+    <thead>
+      <th><%= t ".index" %></th>
+      <th><%= t ".name" %></th>
+      <th><%= t ".create_at" %></th>
+      <th><%= t ".start_date" %></th>
+      <th><%= t ".end_date" %></th>
+      <th><%= t ".task" %></th>
+    </thead>
+    <tbody>
+      <% @course.subjects.each_with_index do |subject, index| %>
+        <tr>
+          <td class="col-md-1"><%= index + 1 %></td>
+          <td class="col-md-1"><%= subject.name %></td>
+          <td class="col-md-2"><%= subject.created_at %></td>
+          <td class="col-md-1"><%= subject.start_date %></td>
+          <td class="col-md-1"><%= subject.end_date %></td>
+          <td>
+            <table>
+              <thead>
+                <th><%= t ".index" %></th>
+                <th><%= t ".name" %></th>
+                <th><%= t ".content" %></th>
+              </thead>
+              <% subject.tasks.each_with_index do |task, index| %>
+                <tbody>
+                  <tr>
+                    <td class="col-md-1"><%= index + 1 %></td>
+                    <td class="col-md-2"><%= task.name %></td>
+                    <td><%= task.content %></td>
+                  </tr>
+                </tbody>
+              <% end %>
+            </table>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
